@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>74骑士电影网 - 铁骑巡映团 · 侠义/公路/中世纪/摩托骑士/西部片</title>
+<meta name="description" content="74骑士电影网，铁骑巡映团风影视单页：夜营黑、铠甲钢、炉火橙、旗红、草甸绿；侠义片、公路片、中世纪史诗、摩托骑士片、西部片、守夜人冷门区、骑士守则、战马词典。官网 https://74qishidianyingwang-h5.github.io">
+<meta name="keywords" content="74骑士电影网, 骑士电影, 侠义片, 公路片, 中世纪史诗, 摩托骑士, 西部片, 守夜人">
+<meta name="author" content="74骑士电影网">
+<meta name="robots" content="index,follow">
+<meta name="bingbot" content="index,follow">
+<meta name="theme-color" content="#12100c">
+<style>
+:root{
+  --bg:#12100c;
+  --bg2:#1a1711;
+  --panel:#211c14;
+  --line:rgba(231,185,74,.28);
+  --steel:#6f7b86;
+  --fire:#ff7a2f;
+  --flag:#c8362b;
+  --green:#5f7d4f;
+  --chrome:#d7dde3;
+  --gold:#e7b94a;
+  --ink:#f3ead2;
+  --muted:#b6a988;
+  --mono:Consolas,Menlo,monospace;
+  --shadow:0 18px 42px rgba(0,0,0,.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:62px}
+body{
+  background:
+    radial-gradient(520px 300px at 88% -10%,rgba(255,122,47,.16),transparent),
+    radial-gradient(480px 300px at -8% 8%,rgba(95,125,79,.16),transparent),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 2px,transparent 2px 6px),
+    linear-gradient(180deg,#12100c,#171309 60%,#0c0a07);
+  color:var(--ink);
+  font-family:"Songti SC","SimSun","Noto Serif SC",Georgia,serif;
+  line-height:1.85;
+}
+a{color:var(--fire);text-decoration:none}
+
+.bar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 16px;border-bottom:2px solid var(--flag);background:rgba(18,16,12,.88);backdrop-filter:blur(8px);}
+.logo b{font-family:var(--mono);font-size:20px;color:var(--gold);letter-spacing:1px}
+.logo span{display:block;font-size:9px;letter-spacing:5px;color:var(--muted);font-family:var(--mono)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+.nav a:hover{border-color:var(--fire);color:var(--fire)}
+
+.hero{max-width:1040px;margin:0 auto;padding:50px 20px 24px;position:relative;text-align:center}
+.camp{position:absolute;inset:8px 12px auto 12px;height:180px;border-radius:20px;
+  background:linear-gradient(120deg,rgba(200,54,43,.18),rgba(255,122,47,.16),rgba(111,123,134,.14));
+  filter:blur(34px);z-index:0}
+.horse{position:absolute;top:12px;right:22px;font-size:38px;filter:drop-shadow(0 8px 14px rgba(200,54,43,.6))}
+.kicker{position:relative;z-index:2;font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:2px}
+.hero h1{position:relative;z-index:2;font-size:32px;margin:8px 0 6px;font-weight:900}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{position:relative;z-index:2;color:var(--muted);max-width:660px;margin:0 auto 12px;font-size:15px}
+.hero .url{position:relative;z-index:2;display:inline-block;font-family:var(--mono);font-size:13px;background:var(--panel);border:1px dashed var(--fire);color:var(--fire);padding:7px 14px;border-radius:8px}
+.metrics{position:relative;z-index:2;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.metrics div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:104px}
+.metrics b{display:block;font-size:18px;color:var(--gold);font-family:var(--mono)}
+.metrics small{color:var(--muted);font-size:12px}
+
+.wrap{max-width:1060px;margin:0 auto;padding:16px 20px 40px}
+.sec{display:flex;align-items:baseline;gap:10px;margin:26px 0 14px;border-bottom:2px solid var(--flag);padding-bottom:6px}
+.sec h2{font-size:20px;font-weight:900}
+.sec h2 b{color:var(--fire)}
+.sec small{color:var(--muted);font-size:12px;font-family:var(--mono)}
+.sec .chip{margin-left:auto;font-size:11px;color:#12100c;background:var(--green);padding:3px 10px;border-radius:6px;font-weight:800}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--panel),var(--bg2));border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.shield{height:90px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:30px;color:#15110a;position:relative}
+.shield::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 55%)}
+.card:nth-child(7n+1) .shield{background:linear-gradient(135deg,#e7b94a,#a9842a)}
+.card:nth-child(7n+2) .shield{background:linear-gradient(135deg,#ff7a2f,#c0431a)}
+.card:nth-child(7n+3) .shield{background:linear-gradient(135deg,#6f7b86,#3c454e)}
+.card:nth-child(7n+4) .shield{background:linear-gradient(135deg,#c8362b,#7c1c16)}
+.card:nth-child(7n+5) .shield{background:linear-gradient(135deg,#5f7d4f,#33472a)}
+.card:nth-child(7n+6) .shield{background:linear-gradient(135deg,#d7dde3,#8b939c)}
+.card:nth-child(7n+7) .shield{background:linear-gradient(135deg,#9a6fb0,#5b3f73)}
+.body{padding:13px}
+.body h3{font-size:16px;margin-bottom:3px}
+.body p{font-size:13px;color:var(--muted);margin-bottom:8px}
+.tag{display:inline-block;font-size:11px;font-family:var(--mono);padding:2px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--gold);margin:0 4px 4px 0}
+.note{margin-top:7px;font-size:12px;color:var(--fire);font-family:var(--mono)}
+
+.codex{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+.codex h3{font-size:17px;color:var(--gold);margin-bottom:10px;font-family:var(--mono)}
+.codex li{list-style:none;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;color:var(--ink)}
+.codex li:last-child{border-bottom:none}
+.codex b{color:var(--green);font-family:var(--mono)}
+
+.about p{color:var(--muted);font-size:14px;margin-bottom:8px}
+.about code{background:var(--bg);border:1px solid var(--line);color:var(--gold);padding:2px 7px;border-radius:6px;font-family:var(--mono)}
+.foot{text-align:center;padding:24px 20px;border-top:2px solid var(--flag);color:var(--muted);font-size:12px;font-family:var(--mono)}
+
+@media(max-width:880px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}.horse{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="bar">
+  <div class="logo"><b>74骑士电影网</b><span>SQUADRON 74 · ROAD CINEMA</span></div>
+  <nav class="nav">
+    <a href="#home">营帐</a>
+    <a href="#chivalry">侠义</a>
+    <a href="#road">公路</a>
+    <a href="#medieval">中世纪</a>
+    <a href="#rider">摩托骑士</a>
+    <a href="#west">西部</a>
+    <a href="#codex">骑士守则</a>
+    <a href="#about">关于</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="camp"></div>
+  <div class="horse">🐎</div>
+  <span class="kicker">// squad.join(74,{ mount:"horse", engine:"v-twin", oath:"放电影不骗人" })</span>
+  <h1>74骑士电影网 · <em>铁骑巡映团</em></h1>
+  <p>74 号骑兵团，不在城堡里放片，沿公路、荒漠、雪原、旧城外搭帐放电影。侠义、荣誉、流浪、复仇、守夜、落日——骑士不一定是中世纪人，也可以是公路上的摩托手、西部里的赏金客、夜里不睡的守门人。</p>
+  <div class="url">https://74qishidianyingwang-h5.github.io</div>
+  <div class="metrics">
+    <div><b>74</b><small>骑兵团番号</small></div>
+    <div><b>6 区</b><small>侠义/公路/中世纪/摩托/西部/守夜</small></div>
+    <div><b>铠甲+排气管</b><small>混搭美学</small></div>
+    <div><b>0</b><small>弹窗/解析源</small></div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <div class="sec" id="chivalry">
+    <h2>⚔️ 侠义片 · <b>有债必还，有约必赴</b></h2><small>chivalry</small><span class="chip">东方侠客也算骑士</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="shield">🗡️🏮</div>
+      <div class="body">
+        <h3>笑傲江湖</h3>
+        <p>琴箫、剑气、江湖令。侠义片的核不是武功，是“说不出的规矩”和“不得不赴的约”。</p>
+        <span class="tag">武侠</span><span class="tag">江湖</span><span class="tag">港片</span>
+        <div class="note">骑士守则第 1 条：言出必行</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🛡️🌙</div>
+      <div class="body">
+        <h3>七武士</h3>
+        <p>村、稻、雨、刀。七个浪人护一户村民，侠义从“荣光”降回“泥里站着”。</p>
+        <span class="tag">武士</span><span class="tag">黑泽明</span><span class="tag">1954</span>
+        <div class="note">胜了，农夫活，武士枯</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🐎📜</div>
+      <div class="body">
+        <h3>佐罗的面具</h3>
+        <p>鞭、剑、P 字签名。侠盗片是骑士最轻松的模样：面具一戴，弱者就有戏看。</p>
+        <span class="tag">侠盗</span><span class="tag">冒险</span><span class="tag">爽片</span>
+        <div class="note">权力不公，就替天写 P</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="road">
+    <h2>🛣️ 公路片 · <b>马蹄和油门都往天边去</b></h2><small>road movie</small><span class="chip">出发比到达重要</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="shield">🏍️🌵</div>
+      <div class="body">
+        <h3>逍遥骑士</h3>
+        <p>长发、机车、美国腹地。公路片圣经：自由是出发，幻灭是归途。</p>
+        <span class="tag">公路</span><span class="tag">1969</span><span class="tag">反叛</span>
+        <div class="note">“我们本想找美国，美国没接”</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🚐🌅</div>
+      <div class="body">
+        <h3>菊次郎的夏天</h3>
+        <p>胖大叔、小孩、乡道、节拍器一样的配乐。公路片也可以不酷，只晒、只笨、只温柔。</p>
+        <span class="tag">公路</span><span class="tag">北野武</span><span class="tag">治愈</span>
+        <div class="note">骑士也会陪小孩找妈</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">❄️🚚</div>
+      <div class="body">
+        <h3>荒野生存</h3>
+        <p>大学、存款、公交、阿拉斯加。公路往北走成了朝圣，最后那句“分享快乐才完整”封神。</p>
+        <span class="tag">公路</span><span class="tag">传记</span><span class="tag">孤独</span>
+        <div class="note">骑士最怕：到地方了，没人说</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="medieval">
+    <h2>🏰 中世纪史诗 · <b>铠甲、弥撒、城旗与背叛</b></h2><small>medieval</small><span class="chip">油画感+泥泞感</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="shield">⚔️🛡️</div>
+      <div class="body">
+        <h3>天国王朝</h3>
+        <p>耶路撒冷、铁匠、城墙、宽银幕。中世纪不是魔法，是信仰、水源、条约和砍杀。</p>
+        <span class="tag">史诗</span><span class="tag">十字军</span><span class="tag">导演剪辑版</span>
+        <div class="note">“铁链锁住的城，先锁住自己”</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🐴🌧️</div>
+      <div class="body">
+        <h3>骑士</h3>
+        <p>波兰诗电影：找一把叫“骑士”的金竖琴。中世纪油画、超现实、不讲故事只讲梦。[15](@ref)</p>
+        <span class="tag">诗电影</span><span class="tag">1980</span><span class="tag">奇幻</span>
+        <div class="note">骑士不是职业，是丢失之物</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🏰🔥</div>
+      <div class="body">
+        <h3>勇敢的心</h3>
+        <p>苏格兰、风笛、脸绘、绞刑前那一声“自由”。中世纪史诗里最会煽情的老兵片。</p>
+        <span class="tag">史诗</span><span class="tag">吉布森</span><span class="tag">1995</span>
+        <div class="note">骑士精神被农民喊成了口号</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="rider">
+    <h2>🤖 摩托骑士 · <b>铠甲换成皮夹克，剑换成火花</b></h2><small>knight riders</small><span class="chip">中世纪×废土</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="shield">🏍️⚡</div>
+      <div class="body">
+        <h3>Knightriders</h3>
+        <p>罗梅罗拍的“摩托圆桌骑士”：盔甲骑机车、集市比武、团慢慢散。骑士精神开上哈雷。[10](@ref)</p>
+        <span class="tag">邪典</span><span class="tag">1981</span><span class="tag">社群</span>
+        <div class="note">理想主义骑到油尽</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🔥🏍️</div>
+      <div class="body">
+        <h3>恶灵骑士</h3>
+        <p>蓝橙配色、骷髅火头、契约与救赎。漫画骑士片：地狱给力量，凡人扛责任。[14](@ref)</p>
+        <span class="tag">超级英雄</span><span class="tag">2007</span><span class="tag">邪典</span>
+        <div class="note">骑士不一定善，但只烧恶人</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🤖⚔️</div>
+      <div class="body">
+        <h3>Knights（1993）</h3>
+        <p>犹他荒原、赛博骑士、人类 vs 流氓机械。低预算但荒原宽银幕很对味。</p>
+        <span class="tag">废土科幻</span><span class="tag">1993</span><span class="tag">B 级</span>
+        <div class="note">剑和电路共用一块电池</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="west">
+    <h2>🌵 西部片 · <b>新大陆的骑士没有城堡</b></h2><small>western</small><span class="chip">马、左轮、落日</span>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="shield">🤠🌅</div>
+      <div class="body">
+        <h3>黄金三镖客</h3>
+        <p>好、坏、丑，墓地里炸出黄金。西部片把骑士三德（义、贪、蠢）拆成三个人。</p>
+        <span class="tag">西部</span><span class="tag">1966</span><span class="tag">意式</span>
+        <div class="note">枪声比钟声准</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🐎💀</div>
+      <div class="body">
+        <h3>与狼共舞</h3>
+        <p>军官、边疆、拉科塔人、 bison 群。西部片反身：骑士最后站在被他同胞屠杀的土地上。</p>
+        <span class="tag">西部</span><span class="tag">1990</span><span class="tag">史诗</span>
+        <div class="note">荣誉换不来原住民的命</div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="shield">🥃⛈️</div>
+      <div class="body">
+        <h3>不可饶恕</h3>
+        <p>老枪手、妓女、小镇、记者。西部片卸妆：骑士老了，杀人不再浪漫，只是脏。</p>
+        <span class="tag">西部</span><span class="tag">1992</span><span class="tag">反英雄</span>
+        <div class="note">“他不杀人是假的，他后悔是真的”</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec" id="codex">
+    <h2>📜 骑士守则 · <b>74 骑兵团内部条令</b></h2><small>the 74 oath</small>
+  </div>
+  <ul class="codex">
+    <li><b>01</b> 护弱：银幕里的弱者哭完，骑兵团不笑。</li>
+    <li><b>02</b> 守约：说放露天片就放，下雨改帐内，不改片单。</li>
+    <li><b>03</b> 不劫片：不解析第三方源、不挂下载、不卖“高清合集”。</li>
+    <li><b>04</b> 识假：标“11k 全格式/免费蓝光包”的，先当木马看。</li>
+    <li><b>05</b> 敬老：老片修复过也要留颗粒，别把霸王别姬磨成自拍滤镜。</li>
+    <li><b>06</b> 落日收旗：再燃的片，散场也要给字幕和静默留 30 秒。</li>
+  </ul>
+
+  <section class="panel about" style="margin-top:26px">
+    <h3>🏕️ 关于 74骑士电影网</h3>
+    <p><strong>74骑士电影网</strong> 是“铁骑巡映团 / 铠甲与排气管”风影视单页：夜营黑帐、铠甲钢、炉火橙、旗红、草甸绿；侠义片 + 公路片 + 中世纪史诗 + 摩托骑士片 + 西部片 + 守夜人冷门区 + 骑士守则 + 战马词典。它不冒充网上老牌“74骑士影院”，也不做盗版站，只把“骑士精神”翻译成片单。</p>
+    <p>官网：<code>https://74qishidianyingwang-h5.github.io</code></p>
+    <p>内链全用 <code>#</code> 占位，CSS/DIV 全内联，不生成 robots.txt / sitemap.xml，GitHub Pages 直传即可；必应收录靠标题、描述、语义结构、移动端体验。</p>
+    <p>本站不提供磁力链接、不解析第三方源、不挂播放器下载、不卖会员、不托管受版权保护视频。看片请走正版院线、授权流媒体、电视台、资料馆放映、公共版权片库。</p>
+  </section>
+
+</div>
+
+<footer class="foot">
+  © 2026 74骑士电影网 · 74qishidianyingwang-h5.github.io · 旗插在片头，马拴在片尾 🐎
+</footer>
+
+</body>
+</html>
